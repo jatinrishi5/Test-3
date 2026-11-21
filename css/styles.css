@@ -757,76 +757,124 @@ body::before {
 }
 
 /* =====================================================================
-   Premium boutique theme: royal navy, champagne gold, ivory
-   (luxury advisory + fintech cards + editorial serif type)
+   Luxury private advisory theme: espresso black, champagne gold, ivory
+   Private banking meets boutique accounting.
    ===================================================================== */
+:root {
+  --ink: #15120e;
+  --ink-2: #201b15;
+  --ink-3: #2d261e;
+  --paper: #f7f2e9;
+  --paper-2: #eee6d8;
+  --card: #fcf9f3;
+  --rule: #e3d9c7;
+  --rule-strong: #c8b899;
+  --text: #221d17;
+  --muted: #675e52;
+  --accent: #8a6a3b;
+  --accent-dark: #6b5029;
+  --accent-soft: #efe3cc;
+  --accent-tint: #f6eedf;
+  --gold: #c9a96e;
+  --gold-dark: #b39257;
+  --star: #d8bb84;
+  --star-soft: #f2e6cd;
+  --on-ink: #f3ede2;
+  --on-ink-muted: #b8ae9f;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Jost", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Jost", "Segoe UI", system-ui, sans-serif;
+  --radius: 4px;
+  --radius-sm: 2px;
+  --shadow: 0 1px 0 rgba(21, 18, 14, .04);
+  --shadow-lg: 0 30px 60px -30px rgba(21, 18, 14, .35);
+}
 
-/* Editorial serif headings */
-h1, h2 { font-weight: 500; letter-spacing: -.012em; }
-h1 { font-weight: 500; line-height: 1.06; }
-h3 { letter-spacing: -.005em; }
-.svc-top h3, .who-card h3, .tc-checklist h3, .founder-copy h3, .step-title, .form-success h3 { font-weight: 600; letter-spacing: -.01em; }
-.svc-name, .highlights strong { font-family: var(--font-body); font-weight: 600; letter-spacing: 0; }
-.logo-text { font-weight: 600; letter-spacing: -.01em; }
-.logo-mark { font-family: var(--font-display); font-weight: 600; letter-spacing: .02em; }
-.cd-days { font-weight: 600; letter-spacing: -.01em; }
+/* Large, elegant serif type */
+h1, h2 { font-weight: 500; letter-spacing: -.005em; }
+h1 { font-size: clamp(3rem, 6vw + .5rem, 5.6rem); line-height: .98; }
+h2 { font-size: clamp(2.2rem, 3vw + 1rem, 3.5rem); line-height: 1.05; }
+.svc-top h3, .who-card h3, .tc-checklist h3, .founder-copy h3, .step-title, .form-success h3 { font-weight: 600; letter-spacing: 0; }
+.who-card h3, .tc-checklist h3 { font-size: 1.5rem; }
+.svc-top h3 { font-size: clamp(1.7rem, 1.5vw + 1.1rem, 2.2rem); }
+.step-title, .form-success h3 { font-size: 1.9rem; }
+.svc-name, .highlights strong { font-family: var(--font-body); font-weight: 500; letter-spacing: .01em; }
+.logo-text { font-weight: 600; font-size: 1.5rem; letter-spacing: .02em; }
+.logo-mark { border-radius: 2px; background: transparent; color: var(--gold); border: 1px solid var(--gold); font-weight: 600; letter-spacing: .06em; }
+.logo-light .logo-mark { background: transparent; }
+.cd-days { font-weight: 500; }
 .founder-initials { font-weight: 500; }
-
-/* Italic gold accent word instead of a highlighter */
 .hl { background: none; font-style: italic; color: var(--accent); animation: none; }
 
-/* Small caps-style labels with a thin gold rule */
-.eyebrow { letter-spacing: .2em; font-size: .72rem; }
-.eyebrow-dot { width: 22px; height: 1px; border-radius: 0; background: var(--gold); box-shadow: none; }
+/* Spaced capitals and a gold hairline */
+.eyebrow { letter-spacing: .32em; font-size: .7rem; font-weight: 500; }
+.eyebrow-dot { width: 28px; height: 1px; border-radius: 0; background: var(--gold); box-shadow: none; }
 
-/* Gold buttons with navy text */
+/* Sharp, understated buttons */
+.btn { border-radius: 2px; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; font-weight: 500; }
+.btn-lg { font-size: .82rem; padding-inline: 1.75rem; }
 .btn-primary { background: var(--gold); color: var(--ink); }
-.btn-primary:hover { background: var(--gold-dark); color: var(--ink); box-shadow: 0 10px 24px -10px rgba(197, 164, 109, .75); }
-.btn { letter-spacing: .01em; }
+.btn-primary:hover { background: var(--gold-dark); color: var(--ink); box-shadow: none; }
 
-/* Dark luxury hero */
+/* Minimal dark header */
+.site-header { background: rgba(21, 18, 14, .95); border-bottom-color: rgba(201, 169, 110, .22); }
+body::before { background: var(--ink); }
+.site-header .logo { color: var(--on-ink); }
+.site-header .logo-cpa { color: var(--gold); }
+.site-nav a:not(.btn) { text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; font-weight: 500; color: var(--on-ink); }
+.site-nav a:not(.btn):hover, .site-nav a.active { color: var(--gold); }
+.site-nav a:not(.btn)::after { height: 1px; background: var(--gold); }
+.nav-toggle { background: transparent; border-color: rgba(201, 169, 110, .45); border-radius: 2px; }
+.nav-toggle .bar { background: var(--on-ink); }
+@media (max-width: 900px) {
+  .site-nav { background: var(--ink); border-bottom-color: rgba(201, 169, 110, .22); }
+  .site-nav a:not(.btn) { border-bottom-color: rgba(255, 255, 255, .1); font-size: .82rem; }
+}
+
+/* Dark hero with a soft champagne glow */
 .hero {
   background:
-    radial-gradient(48rem 26rem at 88% 8%, rgba(197, 164, 109, .16), transparent 62%),
-    radial-gradient(40rem 30rem at -10% 110%, rgba(36, 52, 90, .9), transparent 60%),
-    var(--ink);
+    radial-gradient(50rem 28rem at 85% 0%, rgba(201, 169, 110, .18), transparent 60%),
+    linear-gradient(180deg, #15120e 0%, #1e1913 100%);
   color: var(--on-ink);
 }
-.hero h1 { color: #fbf8f2; }
+.hero h1 { color: #faf6ee; }
 .hero .hl { color: var(--gold); }
 .hero .lead { color: var(--on-ink-muted); }
 .hero .eyebrow { color: var(--gold); }
-.hero .btn-quiet { color: var(--on-ink); text-decoration-color: rgba(197, 164, 109, .6); }
+.hero .btn-quiet { color: var(--on-ink); text-decoration-color: rgba(201, 169, 110, .6); }
 .hero .btn-quiet:hover { color: var(--gold); text-decoration-color: var(--gold); }
 .hero .hero-assurances { color: var(--on-ink-muted); }
-.hero .hero-assurances li::before { background: rgba(197, 164, 109, .18); color: var(--gold); }
-.hero .ledger { border-color: rgba(197, 164, 109, .35); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .55); }
-.hero .deadline-chip { background: var(--card); color: var(--ink); border: 1px solid rgba(197, 164, 109, .45); }
-.hero .deadline-chip strong { color: var(--accent); }
-.hero .deadline-chip:hover { background: #fff; color: var(--ink); }
-.hero .highlights { border-top-color: rgba(197, 164, 109, .4); border-bottom-color: rgba(255, 255, 255, .12); }
-.hero .highlights li { border-color: rgba(255, 255, 255, .12); }
-.hero .highlights strong { color: #fbf8f2; }
-.hero .highlights span { color: var(--on-ink-muted); }
-.hero .hl-icon { background: rgba(197, 164, 109, .14); }
-.hero .hl-icon svg { stroke: var(--gold); }
-
-/* Ledger card: refined lines */
-.ledger-head { border-bottom: 1px solid var(--ink); }
-.stamp { border-color: var(--gold-dark); color: var(--accent); }
-
-/* Cards: softer, rounder, fintech feel */
-.card, .who-card, .svc-panel, .intake-card, .founder { border-radius: 18px; }
-.who-card:hover { border-top-color: var(--gold); }
-
-/* Dark accents use champagne gold */
-.scroll-progress span, .progress-fill { background: linear-gradient(90deg, var(--gold-dark), var(--gold)); }
-.site-nav a:not(.btn)::after { background: var(--gold); }
-.timeline::after, .timeline::before { background: var(--gold); }
-.success-icon { background: var(--gold); color: var(--ink); }
-.hero .ledger, .hero .persona-result { color: var(--text); }
+.hero .hero-assurances li::before { background: rgba(201, 169, 110, .18); color: var(--gold); }
+.hero .ledger { color: var(--text); border-color: rgba(201, 169, 110, .4); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .6); transform: none; }
+.hero .persona-result { color: var(--text); border-left-color: var(--gold); }
 .hero .persona legend { color: var(--on-ink-muted); }
-.hero .persona-options span { background: transparent; color: var(--on-ink); border-color: rgba(255, 255, 255, .28); }
+.hero .persona-options span { background: transparent; color: var(--on-ink); border-color: rgba(255, 255, 255, .28); border-radius: 2px; }
 .hero .persona-options span:hover { border-color: var(--gold); }
 .hero .persona-options input:checked + span { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-.hero .persona-result { border-left-color: var(--gold); }
+.hero .deadline-chip { background: var(--card); color: var(--ink); border: 1px solid rgba(201, 169, 110, .5); border-radius: 2px; }
+.hero .deadline-chip strong { color: var(--accent); }
+.hero .deadline-chip:hover { background: #fff; color: var(--ink); }
+.hero .highlights { border-top-color: rgba(201, 169, 110, .4); border-bottom-color: rgba(255, 255, 255, .12); }
+.hero .highlights li { border-color: rgba(255, 255, 255, .12); }
+.hero .highlights strong { color: #faf6ee; }
+.hero .highlights span { color: var(--on-ink-muted); }
+.hero .hl-icon { background: rgba(201, 169, 110, .14); border-radius: 2px; }
+.hero .hl-icon svg { stroke: var(--gold); }
+
+/* Flat cards edged with fine lines */
+.card, .svc-panel, .who-card, .intake-card, .founder, .ledger { border-radius: 4px; box-shadow: none; }
+.intake-card, .founder { border-color: var(--rule-strong); }
+.who-card { border-top-color: var(--gold); }
+.who-card:hover { box-shadow: var(--shadow-lg); border-top-color: var(--accent); }
+.ledger-head { border-bottom-width: 1px; }
+.ledger-type, .chips li, .svc-link, .persona-options span, .choice span, .deadline-chip { border-radius: 2px; }
+.svc-icon, .hl-icon { border-radius: 2px; }
+.ledger-paper { background: var(--paper-2); }
+.founder-photo { border-radius: 2px; box-shadow: 12px 12px 0 var(--accent-soft); }
+.stamp { border-color: var(--gold-dark); }
+
+/* Gold details */
+.scroll-progress span, .progress-fill { background: linear-gradient(90deg, var(--gold-dark), var(--gold)); }
+.timeline::after, .timeline::before { background: var(--gold); }
+.success-icon { background: var(--gold); color: var(--ink); }
